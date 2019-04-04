@@ -201,6 +201,14 @@ for name in my_new_list:
                     f"The astrogical sign for {name[0]} in 2019-2020 is: {sign[0]}")
 
 
+# The astrogical sign for Bryan in 2019-2020 is: Sagittarius
+# The astrogical sign for Amanda in 2019-2020 is: Scorpio
+# The astrogical sign for JiSeob in 2019-2020 is: Gemini
+# The astrogical sign for YeongHo in 2019-2020 is: Scorpio
+# The astrogical sign for Lillian in 2019-2020 is: Aries
+# The astrogical sign for Wolverine in 2019-2020 is: Capricorn
+
+
 # Stretch “for loop” Challenge:  Research how to create a local directory on your computer, using Python.
 # Choose, and define, your starting path:  c:\temp,  %userprofile%, HOME, , /tmp, etc
 # Create a directory for each element in your list
