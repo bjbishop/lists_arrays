@@ -152,19 +152,21 @@ import datetime
 
 
 def get_day_of_year(y, m, d):
+    """Return the numeric day of the year for a given date.  Example: (2019,1,5) is the 5th day of the year"""
     return(datetime.datetime(y, m, d).timetuple().tm_yday)
 
 
 def range_between_dates(y1, m1, d1, y2, m2, d2):
+    """Return a list with ranges of days of the year between two dates.  Two ranges returned if wrapped over a year."""
     from_day = get_day_of_year(y1, m1, d1)
-    to_day = get_day_of_year(y2, m2, d2) + 1
+    to_day = get_day_of_year(y2, m2, d2)
     if y2 > y1:
         first_part = range(get_day_of_year(y1, m1, d1),
                            get_day_of_year(y1, 12, 31) + 1)
         second_part = range(get_day_of_year(y2, m2, d2) + 1)
         return([first_part, second_part])
     else:
-        return([(range(from_day, to_day))])
+        return([(range(from_day, to_day + 1))])
 
 
 my_new_list = [
@@ -193,12 +195,14 @@ my_new_signs = [
 ]
 
 
+first = 0
+last = -1
+
 for name in my_new_list:
     for sign in my_new_signs:
-        for r in sign[1]:
-            if name[1] in r:
-                print(
-                    f"The astrogical sign for {name[0]} in 2019-2020 is: {sign[0]}")
+        for sign_range in sign[last]:
+            if name[last] in sign_range:
+                print(f"The astrogical sign for {name[first]} in 2019-2020 is: {sign[first]}")
 
 
 # The astrogical sign for Bryan in 2019-2020 is: Sagittarius
